@@ -47,7 +47,7 @@ services:
     ports:
       - 4040:80
     volumes:
-      - ./phpmyadmin/sessions:/sessions
+      - ./infra/phpmyadmin/sessions:/sessions
 
 volumes:
   mysql-volume:
