@@ -39,7 +39,7 @@ services:
     image:  phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOST=db #mysqlサービス名を指定
+      - PMA_HOST=db
       - PMA_USER=test_user
       - PMA_PASSWORD=password
     links:
@@ -47,7 +47,7 @@ services:
     ports:
       - 4040:80
     volumes:
-      - ./phpmyadmin/sessions:sessions/
+      - ./phpmyadmin/sessions:/sessions
 
 volumes:
   mysql-volume:
