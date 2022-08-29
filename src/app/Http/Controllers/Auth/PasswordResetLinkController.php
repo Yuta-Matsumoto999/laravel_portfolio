@@ -40,8 +40,13 @@ class PasswordResetLinkController extends Controller
         );
 
         return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
+                    ? redirect()->route('show.resetPasswordSendRink.complete')
                     : back()->withInput($request->only('email'))
                             ->withErrors(['email' => __($status)]);
+    }
+
+    public function showResetPasswordSendRinkComplete()
+    {
+        return view('auth.reset-password-send-complete');
     }
 }
