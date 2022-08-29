@@ -13,6 +13,13 @@ use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+    private $user;
+
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
     /**
      * Display the registration view.
      *
@@ -21,6 +28,19 @@ class RegisteredUserController extends Controller
     public function create()
     {
         return view('auth.register');
+    }
+
+    public function checkUserEmailExists(Request $request)
+    {
+        $email = $request->get('email');
+
+        if($this->user->where('email', $email)->count() > 0) {
+            $exists = 1;
+        } else {
+            $exists = 2;
+        }
+
+        return $exists;
     }
 
     /**

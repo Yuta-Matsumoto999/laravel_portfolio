@@ -14,11 +14,15 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     </head>
     <body>
-        <div class="font-sans text-gray-900 antialiased">
+        <div id="authenticateForm" class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="{{ mix('js/app.js') }}" ></script>
     </body>
 </html>
