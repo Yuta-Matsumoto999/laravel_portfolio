@@ -155,6 +155,8 @@ return [
 
     'attributes' => [
         'user_name' => '名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
         'birthday' => '生年月日',
         'sports' => '競技名',
         'user_kind' => '利用者種別'
